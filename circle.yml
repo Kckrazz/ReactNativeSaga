@@ -32,7 +32,7 @@ deployment:
     branch: master
     commands:
       # Run our pre-build setup
-      - npm run setup
+      # npm run setup
       # Install Android SDK
       - ./ci-install-android-sdk.sh
       # Build and deploy Android app
