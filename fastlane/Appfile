@@ -1,0 +1,3 @@
+app_identifier "com.shiftcare" # The bundle identifier of your app
+apple_id "tech@acme.com" # Your Apple email address
+team_id "3VG4SQ9TN1"  # Developer Portal Team ID

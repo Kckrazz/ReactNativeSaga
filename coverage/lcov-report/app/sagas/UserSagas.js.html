@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/sagas/UserSagas.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">app/sagas</a> UserSagas.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.28% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">48.28% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import isNil from 'lodash/isNil'
+// import CookieManager from 'react-native-cookies'
+import { call, put } from 'redux-saga/effects'
+import { NavigationActions } from 'react-navigation'
+import actions from '../actions'
+import constants from '../constants'
+import fetchJSON from '../lib/fetchJSON'
+import KeyValueStore from '../lib/KeyValueStore'
+import Logger from '../lib/Logger.js'
+&nbsp;
+const kvs = constants.config.keyValueStore
+&nbsp;
+export function* <span class="fstat-no" title="function not covered" >initialise </span>() {
+<span class="cstat-no" title="statement not covered" >  Logger.info('UserSagas:initialise')</span>
+&nbsp;
+  const payload = <span class="cstat-no" title="statement not covered" >yield call(KeyValueStore.multiGet, [</span>
+    kvs.user.token,
+  ])
+  
+<span class="cstat-no" title="statement not covered" >  if (!isNil(payload[kvs.user.token]) ) {</span>
+<span class="cstat-no" title="statement not covered" >    Logger.log('UserSagas.initialise(): triggering login')</span>
+&nbsp;
+    //  yield put(NavigationActions.navigate({ routeName: 'Notification' }))
+&nbsp;
+    // yield put(actions.user.loginRequestFromSaved(
+    //   payload[kvs.user.email],
+    //   payload[kvs.user.password]
+    // ))
+  }
+}
+&nbsp;
+export function* login (action) {
+  Logger.info('UserSagas:login')
+  let actionResult
+&nbsp;
+  yield put(actions.user.loginPending())
+  
+  try {
+    const payload = action.payload
+    const json = yield call(fetchJSON.post,
+      `${constants.config.api.url}/users/sign_in`,
+      {
+        payload
+      }
+    )
+    actionResult = actions.user.loginSuccess(json)
+    // CookieManager.clearAll((err, res) =&gt; {
+    //   if (err) {
+    //     Logger.debug('UserSagas.login(): error clearing cookies', err)
+    //   }
+    //   if (res) {
+    //     Logger.debug('UserSagas.login(): cookies cleared', res)
+    //   }
+    // })
+&nbsp;
+    yield call(KeyValueStore.multiSet, {
+      [kvs.user.token]: json.authentication_token
+    })
+&nbsp;
+  } catch (err) {
+    // capture SagaCancellationException, but throw any js errors
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (err.name === 'SagaCancellationException') {
+<span class="cstat-no" title="statement not covered" >      Logger.log('UserSagas:load(): cancelled')</span>
+    }
+    else <span class="missing-if-branch" title="if path not taken" >I</span>if (err.response &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >err.response.status === 401)</span> {
+<span class="cstat-no" title="statement not covered" >      actionResult = actions.user.loginFailure('Incorrect username / password')</span>
+      // Wipe stored username/password.
+<span class="cstat-no" title="statement not covered" >      yield call(KeyValueStore.multiRemove, [</span>
+        kvs.user.token
+      ])
+    }else <span class="missing-if-branch" title="if path not taken" >I</span>if (err.response &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >err.response.status === 500)</span> {
+<span class="cstat-no" title="statement not covered" >      actionResult = actions.user.loginFailure('Server error, please try again later')</span>
+    } else {
+      Logger.warn('UserSagas:load(): failed', err, err.stack)
+      actionResult = actions.user.loginFailure(err.message)
+    }
+  }
+&nbsp;
+  // Putting yield outside the try/catch stops it capturing render errors.
+  yield put(actionResult)
+}
+&nbsp;
+export function* <span class="fstat-no" title="function not covered" >loginSuccess </span>() {
+<span class="cstat-no" title="statement not covered" >  Logger.info('UserSagas:loginSuccess')</span>
+  // Trigger loading of shifts.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  yield put(NavigationActions.navigate({ routeName: 'Drawer' }))</span>
+<span class="cstat-no" title="statement not covered" >  yield put(actions.shift.loadShiftsRequest())</span>
+}
+&nbsp;
+export function* <span class="fstat-no" title="function not covered" >logout </span>() {
+<span class="cstat-no" title="statement not covered" >  Logger.info('UserSagas:logout')</span>
+<span class="cstat-no" title="statement not covered" >  yield put(actions.user.logoutPending())</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  KeyValueStore.multiRemove([</span>
+    kvs.user.token,
+  ])
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  yield put(actions.user.logoutSuccess())</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 22 2017 09:46:21 GMT+0545 (+0545)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

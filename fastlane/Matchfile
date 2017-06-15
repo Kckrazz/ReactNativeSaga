@@ -1,0 +1,4 @@
+git_url "git@github.com:tecfoundary/shiftcare-app.git"
+type "development"
+app_identifier ["com.shiftcare"]
+username "suyogkc"

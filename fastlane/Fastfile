@@ -1,0 +1,31 @@
+fastlane_version "2.9.0"
+default_platform :android
+
+# we will call some node scripts which are written in ES6 (see below)
+nodeExec = '../node_modules/.bin/babel-node'
+
+# load in config generated in the pre-build step (see above)
+file = File.read('../appConfig.json')
+appConfig = JSON.parse(file)
+
+
+# Android
+platform :android do
+  desc "Submit a new Beta Build to TestFairy"
+  lane :beta do
+    # ensure we're on the "qa" git branch
+    ensure_git_branch(branch: "master")
+    # build the app in release mode
+    gradle(
+      project_dir: "./android",
+      task: "assemble",
+      build_type: "Release",
+      properties: {
+        'versionCode' => appConfig["buildNumber"],
+        'versionName' => appConfig["appVersion"]
+      }
+    )
+  # call a Node script to upload the generated APK to TestFairy
+    sh "#{nodeExec} ../build-tools/deploy/testfairy-apk-upload.js '../android/app/build/outputs/apk/app-release.apk'"
+  end
+end

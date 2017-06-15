@@ -1,0 +1,45 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "classes": true,
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "modules": true,
+            "defaultParams": true
+        }
+    },
+    "env": {
+        "browser": true
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "react/prop-types": [
+            0
+        ],
+        "require": [
+            0
+        ],
+        "no-unused-vars": [
+            1
+        ],
+        "react/display-name": [
+            1
+        ]
+    },
+    "globals": {
+        "_": true,
+        "require": true,
+        "GLOBAL": true
+    },
+    "editor.formatOnSave": true, // THIS WILL TRIGGER PRETTIER ON SAVE
+    "prettier.eslintIntegration": true // THIS WILL MAKE IT COMMUNICATE WITH ESLINT
+}
