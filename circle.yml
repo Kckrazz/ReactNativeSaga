@@ -37,3 +37,7 @@ deployment:
       - ./ci-install-android-sdk.sh
       # Build and deploy Android app
       - fastlane android beta
+
+test:
+  override:
+    yarn test -- -u
