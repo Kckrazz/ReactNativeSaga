@@ -18,14 +18,13 @@ dependencies:
     - mkdir -p ~/.gradle
     - echo -e "SOFARSOUNDS_RELEASE_STORE_PASSWORD=$ANDROID_KEYSTORE_PASSWORD\nSOFARSOUNDS_RELEASE_KEY_PASSWORD=$ANDROID_KEYSTORE_PASSWORD" >> ~/.gradle/gradle.properties
     # Install Gems (fastlane, etc)
-    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
+    - gem install fastlane
     # Install node modules
     - yarn install
   cache_directories:
     # Let's speed up the next build by cacheing installed dependencies
     - ~/.yarn
     - ~/.cache/yarn
-    - vendor/bundle
     - node_modules
     - ~/Library/Caches/CocoaPods
 deployment:
@@ -37,4 +36,4 @@ deployment:
       # Install Android SDK
       - ./ci-install-android-sdk.sh
       # Build and deploy Android app
-      - bundle exec fastlane android beta
+      - fastlane android beta
